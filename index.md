@@ -13,6 +13,12 @@ Neural fields, coordinate-based neural networks, have recently gained popularity
 
 HERO VIDEO GOES HERE. Triple video, first is alignment process, second is substit, third is replacement.
 
+[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
+
+[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
+
+[//]: # (</video>)
+
 <p align="center">
 <img src="assets/imgs/hero_img_designer.jpg" style="width:70%">
 </p>
@@ -35,12 +41,30 @@ Reg_NF is able to cope with registration of objects at different scale.
 
 VIDEO OF NERF2NERF VS REG-NF
 
+[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
+
+[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
+
+[//]: # (</video>)
+
 #### Use-cases - Library model substitution
 After registration, library models can be substituted into the scene to help handle low-coverage or under-trained scenes.
 
 Video of low-coverage model comparison
 
+[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
+
+[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
+
+[//]: # (</video>)
+
 Video of under-trained model comparison
+
+[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
+
+[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
+
+[//]: # (</video>)
 
 #### Use-cases - Library model replacement
 
@@ -61,6 +85,13 @@ The dataset will be released very soon.
 ### Paper
 
 The pre-print version of the paper is available on arxiv at: .
+
+<div align="center">
+            <a href="https://arxiv.org/abs/2402.09722">
+            <img  src="assets/imgs/regnf_paper_img.png" height="440" width="340" />
+            </a>   
+            <p><a href="https://arxiv.org/abs/2312.15364"><strong>Pre-print of our  paper: "Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields"</strong></a></p>
+</div>
 
 ### Citation
 <p>
