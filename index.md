@@ -1,7 +1,8 @@
 ## Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields
 
 
-
+### Contributions
+* TODO
 
 ### Abstract
 
@@ -12,18 +13,36 @@ Neural fields, coordinate-based neural networks, have recently gained popularity
 
 HERO VIDEO GOES HERE. Triple video, first is alignment process, second is substit, third is replacement.
 
-Overview figure goes here
-<img src="assets/imgs/hero_img_designer.jpg" style="width:100%">
+<p align="center">
+<img src="assets/imgs/hero_img_designer.jpg" style="width:70%">
+</p>
 
 
 ### Method
-#### Initialisation
+Short summary of total method. Hero method pic.
+<p align="center">
+<img src="assets/imgs/optimization_img.png" style="width:90%">
+</p>
+
+#### Novel Bi-directional Optimisation 
+After a BLAH initialisaiton step, we introduce our bi-directional optimisation procedure. INFO DUMP
+
+Through our experiments we show that our registration process outperformed the previous state-of-the-art in neural field registration as seen below.
 
 
+### Results
+Reg_NF is able to cope with registration of objects at different scale.
 
-#### Optimisation 
+VIDEO OF NERF2NERF VS REG-NF
 
+#### Use-cases - Library model substitution
+After registration, library models can be substituted into the scene to help handle low-coverage or under-trained scenes.
 
+Video of low-coverage model comparison
+
+Video of under-trained model comparison
+
+#### Use-cases - Library model replacement
 
 #### ONR Dataset
 
@@ -32,9 +51,6 @@ Overview figure goes here
 ### Download
 
 The dataset will be released very soon.
-
-
-### Results
 
 
 ### Code
