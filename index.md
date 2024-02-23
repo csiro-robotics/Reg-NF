@@ -27,14 +27,14 @@ Object Registration | Library Model Substitution | Scene NF Generation
 <video src='assets/videos/dc_align_s2s.mp4' width=400 muted="" loop="" autoplay=""/> | <video src='assets/videos/substitute_incremental.mp4' width=400 muted="" loop="" autoplay=""/> | <img src="assets/imgs/shuffle.gif" width=400>
 
 ### Method
-Stephen TODO Short summary of total method. 
+Reg-NF provides a method for aligning the surfaces of two different signed-distance-function (SDF) neural fields, by performing an optimization procedure to minimize the difference between the surface values between these two neural fields. An overview of our process is shown in the diagram below.
 <p align="center">
 <img src="assets/imgs/optimization_img.png" style="width:90%">
 </p>
 
 #### Novel Bi-directional Optimisation 
-Stephen TODO:
-After a BLAH initialisaiton step, we introduce our bi-directional optimisation procedure. 
+
+After an initial registration step using sparse sampling of the neural fields, we introduce our bi-directional optimisation procedure. We use gradient decent to find the optimal 6-DoF pose transformation between two surface fields, accounting for translation, rotation and scale differences. Our loss function is the difference between surface values at a set of continuously updated sampling points, and by performing this process bi-directionally, we are robust to poor initial samples and to complex registration problems, such as large scale differences between different neural fields.
 
 Through our experiments we show that our registration process outperformed the previous state-of-the-art in neural field registration as seen below.
 
