@@ -2,7 +2,14 @@
 
 
 ### Contributions
-* TODO
+* Provide method for estimating 6DoF pose transforms between two objects of interest located in different neural fields (NFs)
+  - No human-annotated keypoints
+  - operates directly on continuous NFs
+  - robust to operating at arbitrary scale differences
+* bi-directional registration loss
+  - multi-view surface sampling
+* New object NF registration (ONR) dataset 
+      
 
 ### Abstract
 
@@ -13,11 +20,9 @@ Neural fields, coordinate-based neural networks, have recently gained popularity
 
 HERO VIDEO GOES HERE. Triple video, first is alignment process, second is substit, third is replacement.
 
-[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
-
-[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
-
-[//]: # (</video>)
+<!-- <video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<source src="assets/videos/YOURVIDEO.mp4">
+</video> -->
 
 <p align="center">
 <img src="assets/imgs/hero_img_designer.jpg" style="width:70%">
@@ -25,13 +30,14 @@ HERO VIDEO GOES HERE. Triple video, first is alignment process, second is substi
 
 
 ### Method
-Short summary of total method. Hero method pic.
+Stephen TODO Short summary of total method. 
 <p align="center">
 <img src="assets/imgs/optimization_img.png" style="width:90%">
 </p>
 
 #### Novel Bi-directional Optimisation 
-After a BLAH initialisaiton step, we introduce our bi-directional optimisation procedure. INFO DUMP
+Stephen TODO:
+After a BLAH initialisaiton step, we introduce our bi-directional optimisation procedure. 
 
 Through our experiments we show that our registration process outperformed the previous state-of-the-art in neural field registration as seen below.
 
@@ -41,35 +47,50 @@ Reg_NF is able to cope with registration of objects at different scale.
 
 VIDEO OF NERF2NERF VS REG-NF
 
-[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
-
-[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
-
-[//]: # (</video>)
+<!-- <video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<source src="assets/videos/YOURVIDEO.mp4">
+</video> -->
 
 #### Use-cases - Library model substitution
-After registration, library models can be substituted into the scene to help handle low-coverage or under-trained scenes.
+After registration, library models can be substituted into the scene model to help handle low-coverage or under-trained scenes.
 
-Video of low-coverage model comparison
 
-[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
+<p align=center>
+Library substitution in low-coverage scene model (not all angles observed for training model).
 
-[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
+<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<source src="assets/videos/low-coverage.m4v">
+</video>
+</p>
 
-[//]: # (</video>)
+Under-trained model | Library sub. in under-trained model
+:-: | :-:
+<video src='assets/videos/vearly_original.mp4' width=400 muted="" loop="" autoplay=""/> | <video src='assets/videos/vearly_replace.mp4' width=400 muted="" loop="" autoplay=""/>
 
-Video of under-trained model comparison
-
-[//]: # (<video controls="" width="800" height="500" muted="" loop="" autoplay="">)
-
-[//]: # (<source src="assets/videos/YOURVIDEO.mp4">)
-
-[//]: # (</video>)
+<!-- <p align=center>
+caption1 | caption2
+:-: | :-:
+<video controls="" width="400" height="250" muted="" loop="" autoplay="">
+<source src="assets/videos/vearly_original.mp4"></video> | <video controls="" width="400" height="250" muted="" loop="" autoplay="">
+<source src="assets/videos/vearly_replace.mp4">
+</video>
+</p> -->
 
 #### Use-cases - Library model replacement
+As the relative poses of library object models are known, the calculated pose of objects in the scene can be used to replace the scene's object model with another from the library.
+This opens up options for data-driven robotics where, a NF scene can be changed to provide new data as shown below.
+
+<p align="center">
+<img src="assets/imgs/shuffle.gif" style="width:70%">
+</p>
 
 #### ONR Dataset
+The ONR dataset was built using the [Omniverse Isaac Sim](https://developer.nvidia.com/isaac-sim) simulator. and consists of 3 scenes in a standardised room and 8 object models (5 chairs and 3 tables). Object library models are trained from images of objects isolated in a void.
 
+All Chairs Room | All Tables Room | Mix Room
+:-: | :-: | :-:
+<img src="assets/imgs/ac_above.png"> | <img src="assets/imgs/at_above.png"> | <img src="assets/imgs/fc_hero.png">
+matrix chair, fancy chair, dining chair, chair, fancy chair w. no pillows | willow table, end table, table | fancy chair, table, dining chair
 
 
 ### Download
@@ -79,7 +100,7 @@ The dataset will be released very soon.
 
 ### Code
  <p>
-    We provide code for running our neural field registration code <a href="https://github.com/csiro-robotics/Reg-NF">in our GitHub repository</a> as well as code for utilizing our ONR dataset of simulated environments.
+    We will be providing code for running our neural field registration code <a href="https://github.com/csiro-robotics/Reg-NF">in our GitHub repository</a> as well as code for utilizing our ONR dataset of simulated environments.
 </p>
 
 ### Paper
