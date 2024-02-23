@@ -6,7 +6,7 @@
   - No human-annotated keypoints
   - operates directly on continuous NFs
   - robust to operating at arbitrary scale differences
-* bi-directional registration loss
+* Bi-directional registration loss
   - multi-view surface sampling
 * New object NF registration (ONR) dataset 
       
@@ -72,8 +72,8 @@ caption1 | caption2
 </p> -->
 
 #### Use-cases - Library model replacement
-As the relative poses of library object models are known, the calculated pose of objects in the scene can be used to replace the scene's object model with another from the library.
-This opens up options for data-driven robotics where, a NF scene can be changed to provide new data as shown below.
+As the relative poses of library object models are known, the calculated pose of objects in the scene can be used to replace the scene's object models with others from the library.
+This opens up options for data-driven robotics where a NF scene can be changed to provide new data as shown below.
 
 <p align="center">
 <img src="assets/imgs/shuffle.gif" style="width:70%">
