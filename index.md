@@ -43,13 +43,11 @@ Through our experiments we show that our registration process outperformed the p
 
 
 ### Results
-Reg_NF is able to cope with registration of objects at different scale.
+Reg_NF is able to cope with registration of objects at different scale. 
 
-VIDEO OF NERF2NERF VS REG-NF
-
-<!-- <video controls="" width="800" height="500" muted="" loop="" autoplay="">
-<source src="assets/videos/YOURVIDEO.mp4">
-</video> -->
+nerf2nerf (Goli et al., 2023) | Reg-NF (ours)
+:-: | :-:
+<video src='assets/videos/dc_align_n2n.mp4' width=400 muted="" loop="" autoplay=""/> | <video src='assets/videos/dc_align_s2s.mp4' width=400 muted="" loop="" autoplay=""/>
 
 #### Use-cases - Library model substitution
 After registration, library models can be substituted into the scene model to help handle low-coverage or under-trained scenes.
