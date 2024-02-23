@@ -24,7 +24,7 @@ Neural fields, coordinate-based neural networks, have recently gained popularity
 
 Object Registration | Library Model Substitution | Scene NF Generation
 :-: | :-: | :-:
-<video src='assets/videos/dc_align_s2s.mp4' width=200 muted="" loop="" autoplay=""/> | <video src='assets/videos/substitute_incremental.mp4' width=200 muted="" loop="" autoplay=""/> | <img src="assets/imgs/shuffle.gif">
+<video src='assets/videos/dc_align_s2s.mp4' width=200 muted="" loop="" autoplay=""/> | <video src='assets/videos/substitute_incremental.mp4' width=200 muted="" loop="" autoplay=""/> | <img src="assets/imgs/shuffle.gif" width=200>
 
 ### Method
 Reg-NF provides a method for aligning the surfaces of two different signed-distance-function (SDF) neural fields, by performing an optimization procedure to minimize the difference between the surface values between these two neural fields. An overview of our process is shown in the diagram below.
