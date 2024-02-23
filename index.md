@@ -18,16 +18,13 @@ Neural fields, coordinate-based neural networks, have recently gained popularity
 
 ### Visual Summary
 
-HERO VIDEO GOES HERE. Triple video, first is alignment process, second is substit, third is replacement.
-
-<!-- <video controls="" width="800" height="500" muted="" loop="" autoplay="">
-<source src="assets/videos/YOURVIDEO.mp4">
-</video> -->
-
 <p align="center">
-<img src="assets/imgs/hero_img_designer.jpg" style="width:70%">
+<img src="assets/imgs/hero_img_designer.jpg" style="width:80%">
 </p>
 
+Object Registration | Library Model Substitution | Scene NF Generation
+:-: | :-: | :-:
+<video src='assets/videos/dc_align_s2s.mp4' width=400 muted="" loop="" autoplay=""/> | <video src='assets/videos/substitute_incremental.mp4' width=400 muted="" loop="" autoplay=""/> | <img src="assets/imgs/shuffle.gif" width=400>
 
 ### Method
 Stephen TODO Short summary of total method. 
