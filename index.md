@@ -106,7 +106,7 @@ The pre-print version of the paper is available on arxiv at: .
             <a href="https://arxiv.org/abs/2402.09722">
             <img  src="assets/imgs/regnf_paper_img.png" height="440" width="340" />
             </a>   
-            <p><a href="https://arxiv.org/abs/2312.15364"><strong>Pre-print of our  paper: "Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields"</strong></a></p>
+            <p><a href="https://arxiv.org/abs/2402.09722"><strong>Pre-print of our  paper: "Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields"</strong></a></p>
 </div>
 
 ### Citation
