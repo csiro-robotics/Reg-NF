@@ -1,0 +1,16 @@
+botpts_ratio: 0.025
+camdist_library: 0.7
+camdist_scene: 0.9
+delta_thresh: 0.02
+early_stop_thresh: 0.001
+init_sample_res: 8
+lr_ada: 0.005
+lr_rotparams: 0.02
+lr_s: 0.01
+lr_t: 0.01
+maxsamples: 5000
+numviews: 5
+rho_res: 20
+sampling_freq: 10
+surface_check_thresh: 0.01
+voxelsize: 0.025
