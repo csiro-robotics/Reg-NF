@@ -90,7 +90,7 @@ matrix chair, fancy chair, dining chair, chair, fancy chair w. no pillows | will
 
 ### Download
 
-The dataset will be released very soon.
+Download the ONR dataset through the [CSIRO Data Access Portal](https://doi.org/10.25919/0vbj-fk61). See ReadME within portal for instructions on how to utilise the ONR dataset. 
 
 
 ### Code
