@@ -33,46 +33,11 @@ Third Party Components
 The following third party components are distributed with the Software.  You agree to comply with the licence terms for these components as part of accessing the Software.  Other third party software may also be identified in separate files distributed with the Software.
 ___________________________________________________________________
 
-mmsegmentation https://github.com/open-mmlab/mmsegmentation
+nerfstudio https://github.com/nerfstudio-project/nerfstudio/
 
 This software is licensed under the Apache License 2.0.
 
-___________________________________________________________________
-___________________________________________________________________
-
-mmcv https://github.com/open-mmlab/mmcv
-
-This software is licensed under the Apache License 2.0.
-
-___________________________________________________________________
-___________________________________________________________________
-
-mmengine https://github.com/open-mmlab/mmengine
-
-This software is licensed under the Apache License 2.0.
-
-___________________________________________________________________
-___________________________________________________________________
-
-mmdetection3d https://github.com/open-mmlab/mmdetection3d
-
-This software is licensed under the Apache License 2.0.
-
-___________________________________________________________________
-___________________________________________________________________
-
-quaternion https://github.com/moble/quaternion
-
-This software is licensed under the MIT license.
-
-___________________________________________________________________
-___________________________________________________________________
-
-torchsparse https://github.com/mit-han-lab/torchsparse
-
-This software is licensed under the MIT license.
-
-___________________________________________________________________
+__________________________________________________________________
 ___________________________________________________________________
 
 PyTorch https://pytorch.org
@@ -114,24 +79,10 @@ pandas https://github.com/pandas-dev/pandas
 
 This software is licensed under a BSD-style license.
 
-___________________________________________________________________
-___________________________________________________________________
-
-scikit-learn https://github.com/scikit-learn/scikit-learn
-
-This software is licensed under a BSD-style license.
-
-___________________________________________________________________
+__________________________________________________________________
 ___________________________________________________________________
 
 opencv https://github.com/opencv/opencv-python
-
-This software is licensed under the MIT license.
-
-___________________________________________________________________
-___________________________________________________________________
-
-pyntcloud https://github.com/daavoo/pyntcloud
 
 This software is licensed under the MIT license.
 
@@ -145,20 +96,46 @@ This software is licensed under the HPND license.
 ___________________________________________________________________
 ___________________________________________________________________
 
-pynput https://github.com/moses-palmer/pynput
+pyyaml https://pyyaml.org/
 
-This software is licensed under the LGPL-3.0 license.
-
-___________________________________________________________________
-___________________________________________________________________
-
-tqdm https://github.com/tqdm/tqdm
-
-This software is licensed under the MPL license.
+This software is licensed under the MIT license.
 
 ___________________________________________________________________
 ___________________________________________________________________
 
+tyro https://brentyi.github.io/tyro/
 
+This software is licensed under the MIT license.
+
+___________________________________________________________________
+___________________________________________________________________
+
+torchtyping https://github.com/patrick-kidger/torchtyping
+
+This software is licensed under the Apache License 2.0.
+
+___________________________________________________________________
+___________________________________________________________________
+
+Visdom https://github.com/fossasia/visdom
+
+This software is licensed under the Apache License 2.0.
+
+___________________________________________________________________
+___________________________________________________________________
+
+robust_loss_pytorch https://github.com/jonbarron/robust_loss_pytorch
+
+This software is licensed under the Apache License 2.0.
+
+___________________________________________________________________
+___________________________________________________________________
+
+Rich https://github.com/Textualize/rich
+
+This software is licensed under the MIT license.
+
+___________________________________________________________________
+___________________________________________________________________
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
