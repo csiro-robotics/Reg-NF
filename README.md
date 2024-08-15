@@ -80,13 +80,41 @@ python scripts/evaluate_transforms.py --tmat_file <path/to/transform.npy> --resu
 
 Where the csv file provided will have the latest evaluation results appended to it. 
 
-**Note** there is also the option to add a `--run_id` to this script to indicate multiple runs of the same experiment setup.
+**Note** there is also the option to add a `--run_id` to this script to indicate multiple runs of the same experiment setup. Used primarily in conjunction with permute scripts.
 
 ## RegNF Scene Editing Rendering with RegNF Results
-As shown in the paper, RegNF results can enable library substitution or object instance replacement within the scene.
+As shown in the paper, RegNF results can enable library substitution or object instance replacement within the scene. In our code base, this is all performed through the `render_multiple_sdfs.py` script. Relevant flags are
 
+```
+--scene-sdf-path -> Path to the main scene sdf YAML (required)
+--object-sdf-paths -> Paths to object sdf YAMLs (can be multiple if whishing to perform multiple substitutions/replacements)
+--object-transform-paths -> Paths to object transforms for the scene NPY format (can be multiple but assumes same order as object_sdf_paths)
+--replace-sdf-paths -> Paths to object sdf YAMLS that will replace those originally used in the transform (can be multiple but assumes same order as object_sdf_paths).
+--scene-remove-ids -> Instance IDs to be removed from the scene if rendering in "replace" mode. Note this assumes the same order as object_sdf_paths and any extra ids will simply be removed from the scene with no replacement. Recommended for replace mode rendering. Consult scene data meta_data.json for instance IDs.
+--object-colours -> what colours to render objects as (useful visualisation for library substitution)
+--render-mode -> mode to use for rendering. Options replace (remove old objects from scene and render new ones on top) and blend (overlay scene and object SDFs together).
+--sampler -> Sampler to use for rendering. Options original or uniform. Recommend uniform for replace mode as smart sampler used in neus-facto can produce odd looking artefacts.
+--output-path -> Name of output folder (default: renders)
+```
+
+To perform substitution, simply don't provide any paths for `--replace-sdf-paths` and the library objects will be placed into the scene according to the transformation file provided.
+
+To perform instance replacements, simply provide paths for `--replace-sdf-paths` to object model YAML files that match the class of object being replaced. Note that you should also use replace mode and provide `--scene-remove-ids` for the original to avoid any clipping effects with the original scene objects.
+
+## Set up multiple tests
+To speed up running experiments en masse, we provide two scripts that can generate single bash scripts for some subset of experiments. 
+
+The `permute_regnf_multi.py` script enables you to set up which scenes and objects you want to permute over, set up multiple iteractions of the same test, options for saving different intermittent transforms,etc. For full details run `python scripts/permute_regnf_multi.py -h`. The output will be a bash script that, when run, will run regnf multiple times across all permutations you had predefined.
+
+The `permute_eval.py` script enables you to perform the `evaluate_transforms.py` script across all transforms found in a central transforms folder location and store the results in a given results file. It is assumed all transforms of interest are directly within the given transforms_folder input unless `--multiple_runs` flag is provided in which case the transformed are nexted under individual run folders.
+
+## Update RegNF parameters
+Many RegNF hyperparameters can be manually adjusted through a regnf config file. By default we use the parameters found in `configs/default_regnf.yaml` which were found to be effective on the ONR dataset. These can be changed as desired for future experiments.
 
 # Set up ONR dataset
+This code is designed to work with the scenes and objects from the Object Neural field Registration (ONR) dataset.
+You can find the dataset and details for downloading it [here](https://doi.org/10.25919/0vbj-fk61). Full details on the dataset can be found in the dataset ReadME.
+Once downloaded, simply ensure that you either copy or link the raw image data to your sdfstudio `data` folder and the trained models to the `outputs` folder. The dataset itself should have already split the data into such folders. Make sure to maintain folder data structure.
 
 ## Known issues
 We have found there are some issues using the pre-trained models in the ONR dataset with different versions of sdfstudio as they had been trained on different versions.
@@ -103,4 +131,4 @@ We have found there are some issues using the pre-trained models in the ONR data
 * table
 * willow_table
 
-To use the older models run `pip install torchmetrics==0.11.4 lpips`. To revert back run `pip install torchmetrics==1.4.0`. For simplicity we recommend training new models from scratch with the data provided.
+To use the older models run `pip install torchmetrics==0.11.4 lpips`. To revert back run `pip install torchmetrics==1.4.0`. For simplicity we recommend training new models from scratch with the raw image data provided.
