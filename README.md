@@ -7,7 +7,7 @@ The code here is designed to work within a pre-existing sdfstudio repository. Pl
 Once sdfstudio is installed, simply copy the relevant contents of this repo into sdfstudio, install remainging dependancies and update the package.
 
 ```
-git clone <TODO regnf repo>
+git clone https://github.com/csiro-robotics/Reg-NF.git
 cp Reg-NF/scripts <path/to/sdfstudio>/
 cp Reg-NF/configs <path/to/sdfstudio>/
 cd <path/to/sdfstudio>
@@ -59,7 +59,7 @@ Once you have a scene and an object SDF model as outlined above, you are ready t
 You do this for a single object with it's matching object within a scene without any visualisations using `regnf.py` as follows:
 
 ```
-python scripts/regnf.py --scene-sdf-path <path/to/scene.yml> --object-sdf-path <path/to/object.yml> --transform-savepath <path/to/transform.npy> sdfstudio-data <path/to/scene/data>
+python scripts/regnf.py --scene-sdf-path <path/to/scene.yml> --object-sdf-path <path/to/object.yml> --transform-savepath <path/to/transform.npy> sdfstudio-data --data <path/to/scene/data>
 ```
 
 Options exist to perform visualisations with visdom or open3d, saving open3d visualisations of each step of optimization, saving the initialisation, FGR or each step transformation matrices, as well as to enable the provided object to be tested against every object within the scene. For further details run `python scripts/regnf.py -h`.
