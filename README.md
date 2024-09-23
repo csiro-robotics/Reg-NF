@@ -1,7 +1,17 @@
-# reg-nf-dev-temp
-Temporary private repo for tidying Reg-NF code before public release in Reg-NF repo
+# [ICRA2024] Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields
 
-# Install
+[[Project Page](https://csiro-robotics.github.io/Reg-NF/)] | [[Paper](https://arxiv.org/abs/2402.09722)] | [[Data](https://doi.org/10.25919/0vbj-fk61)]
+
+This repository contains the code implementation used in the paper [Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields](https://csiro-robotics.github.io/Reg-NF/) published within proceedings of the International Conference of Robotics and Automation (ICRA) 2024.
+
+<p align="center">
+<img src="docs/hero_img_designer.jpg" style="width:80%">
+</p>
+
+## Abstract
+Neural fields, coordinate-based neural networks, have recently gained popularity for implicitly representing a scene. In contrast to classical methods that are based on explicit representations such as point clouds, neural fields provide a continuous scene representation able to represent 3D geometry and appearance in a way which is compact and ideal for robotics applications. However, limited prior methods have investigated registering multiple neural fields by directly utilising these continuous implicit representations. In this paper, we present Reg-NF, a neural fields-based registration that optimises for the relative 6-DoF transformation between two arbitrary neural fields, even if those two fields have different scale factors. Key components of Reg-NF include a bidirectional registration loss, multi-view surface sampling, and utilisation of volumetric signed distance functions (SDFs). We showcase our approach on a new neural field dataset for evaluating registration problems. We provide an exhaustive set of experiments and ablation studies to identify the performance of our approach, while also discussing limitations to provide future direction to the research community on open challenges in utilizing neural fields in unconstrained environments.
+
+## Install
 The code here is designed to work within a pre-existing sdfstudio repository. Please see the [sdfstudio repository](https://github.com/autonomousvision/sdfstudio) to install sdfstudio.
 
 Once sdfstudio is installed, simply copy the relevant contents of this repo into sdfstudio, install remainging dependancies and update the package.
@@ -16,10 +26,10 @@ pip install -e .
 ```
 Now you should be ready to use RegNF
 
-# Using RegNF
+## Using RegNF
 RegNF can be broken up into 3 steps with three scripts. Training SDF models, registration through reg-nf, and rendering/evaluating results.
 
-## Training SDF models
+### Training SDF models
 SDF models are trained using existing sdfstudio procedures with some notable assumptions being made for interaction with the rest of the code base.
 
 1. Training is done using the `neus-facto` model
@@ -53,7 +63,7 @@ ns-train neus-facto \
 
 Once you have at least one scene model and one object model, you are ready to perform RegNF
 
-## RegNF Registration
+### RegNF Registration
 Once you have a scene and an object SDF model as outlined above, you are ready to use RegNF to perform registration. 
 
 You do this for a single object with it's matching object within a scene without any visualisations using `regnf.py` as follows:
@@ -71,7 +81,7 @@ Options exist to perform visualisations with visdom or open3d, saving open3d vis
 1. "transforms" should be included as a folder along the savepath
 2. Final file follows the format `<scene_model>-2-<object_model>.npy` where  both `<scene_model>` and `object_model` are short names included both in the `PRIM_TO_OBJECT_SHORT` and `OBJECT_FULLNAMES` dictionaries found in `regnf.py`
 
-## Evaluating RegNF Results
+### Evaluating RegNF Results
 If transform matrices and scene and object model files have been set up according to the naming conventions outlined above, the transformation numpy file will be all that is needed to perform evaluation as follows:
 
 ```
@@ -82,7 +92,7 @@ Where the csv file provided will have the latest evaluation results appended to 
 
 **Note** there is also the option to add a `--run_id` to this script to indicate multiple runs of the same experiment setup. Used primarily in conjunction with permute scripts.
 
-## RegNF Scene Editing Rendering with RegNF Results
+### RegNF Scene Editing Rendering with RegNF Results
 As shown in the paper, RegNF results can enable library substitution or object instance replacement within the scene. In our code base, this is all performed through the `render_multiple_sdfs.py` script. Relevant flags are
 
 ```
@@ -101,22 +111,22 @@ To perform substitution, simply don't provide any paths for `--replace-sdf-paths
 
 To perform instance replacements, simply provide paths for `--replace-sdf-paths` to object model YAML files that match the class of object being replaced. Note that you should also use replace mode and provide `--scene-remove-ids` for the original to avoid any clipping effects with the original scene objects.
 
-## Set up multiple tests
+### Set up multiple tests
 To speed up running experiments en masse, we provide two scripts that can generate single bash scripts for some subset of experiments. 
 
 The `permute_regnf_multi.py` script enables you to set up which scenes and objects you want to permute over, set up multiple iteractions of the same test, options for saving different intermittent transforms,etc. For full details run `python scripts/permute_regnf_multi.py -h`. The output will be a bash script that, when run, will run regnf multiple times across all permutations you had predefined.
 
 The `permute_eval.py` script enables you to perform the `evaluate_transforms.py` script across all transforms found in a central transforms folder location and store the results in a given results file. It is assumed all transforms of interest are directly within the given transforms_folder input unless `--multiple_runs` flag is provided in which case the transformed are nexted under individual run folders.
 
-## Update RegNF parameters
+### Update RegNF parameters
 Many RegNF hyperparameters can be manually adjusted through a regnf config file. By default we use the parameters found in `configs/default_regnf.yaml` which were found to be effective on the ONR dataset. These can be changed as desired for future experiments.
 
-# Set up ONR dataset
+## Set up ONR dataset
 This code is designed to work with the scenes and objects from the Object Neural field Registration (ONR) dataset.
 You can find the dataset and details for downloading it [here](https://doi.org/10.25919/0vbj-fk61). Full details on the dataset can be found in the dataset ReadME.
 Once downloaded, simply ensure that you either copy or link the raw image data to your sdfstudio `data` folder and the trained models to the `outputs` folder. The dataset itself should have already split the data into such folders. Make sure to maintain folder data structure.
 
-## Known issues
+### Known issues
 We have found there are some issues using the pre-trained models in the ONR dataset with different versions of sdfstudio as they had been trained on different versions.
 
 **Working with latest sdfstudio**
@@ -132,3 +142,18 @@ We have found there are some issues using the pre-trained models in the ONR data
 * willow_table
 
 To use the older models run `pip install torchmetrics==0.11.4 lpips`. To revert back run `pip install torchmetrics==1.4.0`. For simplicity we recommend training new models from scratch with the raw image data provided.
+
+## Citation
+If you find this work useful, please consider citing:
+```
+@inproceedings{hausler2024regnf,
+	title = {Reg-{NF}: {Efficient} {Registration} of {Implicit} {Surfaces} within {Neural} {Fields}},
+	shorttitle = {Reg-{NF}},
+	doi = {10.1109/ICRA57147.2024.10610982},
+	booktitle = {2024 {IEEE} {International} {Conference} on {Robotics} and {Automation} ({ICRA})},
+	author = {Hausler, Stephen and Hall, David and Mahendren, Sutharsan and Moghadam, Peyman},
+	month = may,
+	year = {2024},
+	pages = {15409--15415},
+}
+```
