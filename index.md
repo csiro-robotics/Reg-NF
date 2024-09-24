@@ -115,14 +115,14 @@ If you find this paper helpful for your research, please cite our paper using th
 
 ```
 @inproceedings{hausler2024regnf,
-	title = {Reg-{NF}: {Efficient} {Registration} of {Implicit} {Surfaces} within {Neural} {Fields}},
-	shorttitle = {Reg-{NF}},
-	doi = {10.1109/ICRA57147.2024.10610982},
-	booktitle = {2024 {IEEE} {International} {Conference} on {Robotics} and {Automation} ({ICRA})},
-	author = {Hausler, Stephen and Hall, David and Mahendren, Sutharsan and Moghadam, Peyman},
-	month = may,
-	year = {2024},
-	pages = {15409--15415}
+  title = {Reg-{NF}: {Efficient} {Registration} of {Implicit} {Surfaces} within {Neural} {Fields}},
+  shorttitle = {Reg-{NF}},
+  doi = {10.1109/ICRA57147.2024.10610982},
+  booktitle = {2024 {IEEE} {International} {Conference} on {Robotics} and {Automation} ({ICRA})},
+  author = {Hausler, Stephen and Hall, David and Mahendren, Sutharsan and Moghadam, Peyman},
+  month = may,
+  year = {2024},
+  pages = {15409--15415}
 }
 ```
 </p>
