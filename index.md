@@ -1,4 +1,4 @@
-## [ICRA2024] Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields
+## Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields
 
 
 ### Contributions
