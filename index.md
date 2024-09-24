@@ -113,7 +113,7 @@ The pre-print version of the paper is available on arxiv at: .
 <p>
 If you find this paper helpful for your research, please cite our paper using the following reference:
 
-```
+<pre><code class="citation">
 @inproceedings{hausler2024regnf,
   title = {Reg-{NF}: {Efficient} {Registration} of {Implicit} {Surfaces} within {Neural} {Fields}},
   shorttitle = {Reg-{NF}},
@@ -124,5 +124,5 @@ If you find this paper helpful for your research, please cite our paper using th
   year = {2024},
   pages = {15409--15415}
 }
-```
+</code></pre>
 </p>
