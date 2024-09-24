@@ -122,7 +122,7 @@ If you find this paper helpful for your research, please cite our paper using th
 	author = {Hausler, Stephen and Hall, David and Mahendren, Sutharsan and Moghadam, Peyman},
 	month = may,
 	year = {2024},
-	pages = {15409--15415},
+	pages = {15409--15415}
 }
 ```
 </p>
